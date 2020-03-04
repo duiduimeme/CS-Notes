@@ -43,6 +43,13 @@ B+ Tree 是基于 B Tree 和叶子节点顺序访问指针进行实现，它具�
 在 B+ Tree 中，一个节点中的 key 从左到右非递减排列，如果某个指针的左右相邻 key 分别是 key<sub>i</sub> 和 key<sub>i+1</sub>，且不为 null，则该指针指向节点的所有 key 大于等于 key<sub>i</sub> 且小于等于 key<sub>i+1</sub>。
 
 <div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/33576849-9275-47bb-ada7-8ded5f5e7c73.png" width="350px"> </div><br>
+Btree和b+tree的区别：  多路平衡查找树    高度低  IO少，性能高
+   Btree：非叶子节点最多有m个孩子m-1个关键字，关键字分布在整棵树中，中序遍历查找到即停止
+   B+tree：非叶子节点有m个关键字，数据全都保存在叶子节点(增序排列)中，关键字只作索引。
+   优点： 1、B+tree中间结点不保存数据，高度低，性能更高
+         2、B+tree必须查找到叶子节点，更加稳定
+         3、B+tree只需要查找叶子节点即可，B树却需要重复中序遍历。
+ 
 
 ### 2. 操作
 
